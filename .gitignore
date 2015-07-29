@@ -1,6 +1,9 @@
 *
-!.bash*
+!.bash_profile
+!.bashrc
 !.gitignore_global
 !.gitconfig
 !.nanorc
 !.gitignore
+!.profile
+
