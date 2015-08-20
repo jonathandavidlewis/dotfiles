@@ -7,5 +7,5 @@
 !.nanorc
 !.gitignore
 !.profile
-!.bashrc_includes
+!.bashrc_includes/git-prompt.sh
 
