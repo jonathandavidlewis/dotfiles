@@ -1,6 +1,8 @@
 #alias
 alias dmp="cat -n"
 alias ls="ls -lA"
+alias cdpr="cd ~/wedev0/www/party_square/"
+alias cdvm="cd ~/webdev0/www/party_square/config/developVM"
 
 # colors
 [ -z "$TMUX" ] && export TERM=xterm-256color
