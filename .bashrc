@@ -1,7 +1,7 @@
 #alias
 alias dmp="cat -n"
 alias ls="ls -lA"
-alias cdpr="cd ~/wedev0/www/party_square/"
+alias cdpr="cd ~/webdev0/www/party_square/"
 alias cdvm="cd ~/webdev0/www/party_square/config/developVM"
 
 # colors
