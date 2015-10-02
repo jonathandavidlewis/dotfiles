@@ -1,8 +1,26 @@
 #alias
 alias dmp="cat -n"
 alias ls="ls -lA"
-alias cdpr="cd ~/webdev0/www/party_square/"
 alias cdvm="cd ~/webdev0/www/party_square/config/developVM"
+
+#functions
+fcd ()
+{
+	if [ "$1" == "itools" ]; then
+		if [ "$2" == "root" ]; then
+			cd ~/webdev0/www/party_square/
+		elif [ "$2" == "config" ]; then
+			cd ~/webdev0/www/party_square/config
+		elif [ "$2" == "vm" ]; then
+			cd ~/webdev0/www/party_square/config/developVM
+		else
+			echo "I don't know that path."
+		fi
+	else
+		echo "I don't know that project."
+	fi
+}
+
 
 # colors
 [ -z "$TMUX" ] && export TERM=xterm-256color
