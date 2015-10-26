@@ -1,6 +1,7 @@
 #alias
 alias dump="cat -n"
 alias ls="ls -lA"
+alias git="hub"
 #functions
 # colors
 [ -z "$TMUX" ] && export TERM=xterm-256color
