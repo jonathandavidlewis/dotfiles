@@ -1,27 +1,7 @@
 #alias
-alias dmp="cat -n"
+alias dump="cat -n"
 alias ls="ls -lA"
-alias cdvm="cd ~/webdev0/www/party_square/config/developVM"
-
 #functions
-fcd ()
-{
-	if [ "$1" == "itools" ]; then
-		if [ "$2" == "root" ]; then
-			cd ~/webdev0/www/party_square/
-		elif [ "$2" == "config" ]; then
-			cd ~/webdev0/www/party_square/config
-		elif [ "$2" == "vm" ]; then
-			cd ~/webdev0/www/party_square/config/developVM
-		else
-			echo "I don't know that path."
-		fi
-	else
-		echo "I don't know that project."
-	fi
-}
-
-
 # colors
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
@@ -48,7 +28,10 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Include external files
-source ~/.bashrc_includes/*
+for file in ~/.bashrc_includes/*; do
+  source $file
+done
+
 
 # tell ls to be colourful
 export CLICOLOR=1
