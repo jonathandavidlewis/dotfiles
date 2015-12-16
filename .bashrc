@@ -3,6 +3,20 @@ alias dump="cat -n"
 alias ls="ls -lA"
 alias git="hub"
 #functions
+enterTheMatrix(){
+  idletime(){
+    /usr/sbin/ioreg -c IOHIDSystem | /usr/bin/awk '/HIDIdleTime/ {print int($NF/1000000000); exit}'
+  }
+  while [ 1 ];
+  do
+    if [ `idletime` -gt 5000 ];
+    then
+     #./matrix.sh
+     idletime;
+    fi
+    sleep 1
+  done
+}
 # colors
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
@@ -47,6 +61,8 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 # PS1="$(tput setaf 2)[~\W$(tput setaf 7)\]\$(__git_ps1)$(tput setaf 2)]$ "
 PS1='\T[\W/\[\033[0;37m\]$(__git_ps1 " (%s)")\[\033[0;12m\]]\$ '
+
+enterTheMatrix;
 
 #source ~/.bash_profile
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
