@@ -66,7 +66,7 @@ PS1='\T[\W/\[\033[0;37m\]$(__git_ps1 " (%s)")\[\033[0;12m\]]\$ '
 
 enterTheMatrix;
 
-### Load adb (android debug bridge) into path
+###exprot default android platform-tools dir to $PATH
 if [ -d "/Users/andrewbillings/Library/Android/sdk/platform-tools" ] ; then
   export PATH="/Users/andrewbillings/Library/Android/sdk/platform-tools:$PATH"
 fi
