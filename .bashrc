@@ -66,5 +66,10 @@ PS1='\T[\W/\[\033[0;37m\]$(__git_ps1 " (%s)")\[\033[0;12m\]]\$ '
 
 enterTheMatrix;
 
+### Load adb (android debug bridge) into path
+if [ -d "/Users/andrewbillings/Library/Android/sdk/platform-tools" ] ; then
+  export PATH="/Users/andrewbillings/Library/Android/sdk/platform-tools:$PATH"
+fi
+
 #source ~/.bash_profile
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
