@@ -1,7 +1,7 @@
 #alias
 alias dump="cat -n"
 alias ls="ls -lA"
-alias git="hub"
+
 #functions
 ##stupid function that load "the matrix."
 enterTheMatrix(){
