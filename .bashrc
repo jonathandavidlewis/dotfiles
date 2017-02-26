@@ -2,24 +2,6 @@
 alias dump="cat -n"
 alias ls="ls -lA"
 
-#functions
-##stupid function that load "the matrix."
-enterTheMatrix(){
-  theMatrix(){
-    echo -e "\e[1;40m" ; clear ; while :; do echo $LINES $COLUMNS $(( $RANDOM % $COLUMNS)) $(( $RANDOM % 72 )) ;sleep 0.05; done|awk '{ letters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()"; c=$4; letter=substr(letters,c,1);a[$3]=0;for (x in a) {o=a[x];a[x]=a[x]+1; printf "\033[%s;%sH\033[2;32m%s",o,x,letter; printf "\033[%s;%sH\033[1;37m%s\033[0;0H",a[x],x,letter;if (a[x] >= $1) { a[x]=0; } }}'
-  }
-  idletime(){
-    /usr/sbin/ioreg -c IOHIDSystem | /usr/bin/awk '/HIDIdleTime/ {print int($NF/1000000000); exit}'
-  }
-  while [ 1 ];
-  do
-    if [ `idletime` -gt 0 ];
-    then
-      theMatrix;
-    fi
-    sleep 1
-  done
-}
 # colors
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
@@ -74,8 +56,6 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 # PS1="$(tput setaf 2)[~\W$(tput setaf 7)\]\$(__git_ps1)$(tput setaf 2)]$ "
 PS1='\T[\W/\[\033[0;37m\]$(__git_ps1 " (%s)")\[\033[0;12m\]]\$ '
-
-#enterTheMatrix;
 
 ###exprot default android platform-tools dir to $PATH
 if [ -d "/Users/andrewbillings/Library/Android/sdk/platform-tools" ] ; then
